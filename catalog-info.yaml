@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vocational-goose-dotnet-basic-gitops
+  description: This is GitOps manifest for vocational-goose-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: vocational-goose-dotnet-basic
+    janus-idp.io/tekton: vocational-goose-dotnet-basic 
+    backstage.io/kubernetes-id: vocational-goose-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vocational-goose-dotnet-basic
